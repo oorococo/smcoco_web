@@ -1,2 +1,2 @@
-# smcoco_web
-smcoco web
+# react_web
+react starter app in web browser
