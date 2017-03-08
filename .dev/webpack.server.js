@@ -10,15 +10,7 @@ const { env, host, port, publicPath } = conf
 const webpackPort = port + 1
 
 const src = path.resolve(__dirname, '../')
-const dst = path.resolve(__dirname, '../build')
-
-// const entriesPromise = inquirer.prompt([{
-//     type: 'checkbox',
-//     message: '请选择需要启动的子项目:',
-//     name: 'entries',
-//     choices: entryNames.map(v => ({ name: v })),
-//     validate: v => v.length < 1 ? '你至少应该选择一项' : true,
-// }])
+const dst = path.resolve(__dirname, env === 'preview' ? '../build' : '../dist')
 
 module.exports = async() => {
     const webpackConf = {
