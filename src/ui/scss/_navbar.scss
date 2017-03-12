@@ -1,0 +1,28 @@
+$navbar-height: 34px;
+$navbar-color: rgba(255, 255, 255, .95);
+$navbar-background-color: rgba(0, 0, 0, .75);
+
+.navbar {
+    background-color: $navbar-background-color;
+    border-bottom: 1px solid darken($navbar-background-color, 15);
+    & > div {
+        @extend .fl;
+        @extend .jc-b;
+    }
+    i {
+        margin-right: 5px;
+    }
+    .nav {
+        @extend .fl;
+        a {
+            display: block;
+            padding: 5px 10px;
+            color: $navbar-color;
+            &:hover {
+                background-color: darken($navbar-background-color, 15);
+                text-decoration: none;
+                box-shadow: 0 0 4px 9px darken($navbar-background-color, 9) inset;
+            }
+        }
+    }
+}

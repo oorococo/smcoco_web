@@ -1,0 +1,110 @@
+@import 'variables';
+@import 'flex';
+@import "navbar";
+@import "divider";
+
+// @container
+$container-padding: 10px;
+//
+.ctn {
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+@each $label, $value in $container-max-widths {
+    @media all and (min-width: map_get($grid-breakpoints, $label)) {
+        .ctn {
+            width: $value;
+        }
+    }
+}
+
+// @row
+$col-gutter: (
+    xs: 5px,
+    sm: 10px,
+    md: 15px,
+    lg: 20px,
+    xl: 25px,
+) !default;
+//
+.r {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//
+@each $label, $value in $col-gutter {
+    .r.r-g-#{$label} {
+        margin-left: -#{$value};
+        > [class^="c-"] {
+            padding-left: #{$value};
+        }
+    }
+    .r.r-g-#{$label}-v {
+        margin-top: -#{$value};
+        > [class^="c-"] {
+            padding-top: #{$value};
+        }
+    }
+}
+
+// @col
+$col-counts: 12;
+//
+//for $index from 1 to
+//@each $label, $value in $container-max-widths {
+//    @media all and (min-width: map_get($grid-breakpoints, $label)) {
+//
+//    }
+//}
+//
+//.col#{$infix} {
+//    flex-basis: 0;
+//    flex-grow: 1;
+//    max-width: 100%;
+//}
+//.col#{$infix}-auto {
+//    flex: 0 0 auto;
+//    width: auto;
+//}
+//
+//@for $i from 1 through $columns {
+//    .col#{$infix}-#{$i} {
+//        @include make-col($i, $columns);
+//    }
+//}
+
+
+.highlight {
+    margin-bottom: 14px;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+.docBox-100-100 {
+    width: 100px;
+    min-height: 100px;
+    background-color: pink;
+}
+
+.docBox-full-300 {
+    width: 100%;
+    min-height: 300px;
+    background-color: powderblue;
+}
+
+
+body {
+    padding-bottom: 500px;
+}
+
+
+////////////////////

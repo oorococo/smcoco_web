@@ -26,12 +26,12 @@ const entriesPromise = env === 'development' ?
         validate: v => v.length < 1 ? '你至少应该选择一项' : true,
     }]) : { entries: entryNames }
 
-module.exports = async() => {
+module.exports = async () => {
     const entries = (await entriesPromise).entries
     const entry = {}
 
     for (let i = 0; i < entries.length; i += 1) { entry[entries[i]] = [`${src}/${entries[i]}/index.jsx`] }
-    entry.common = ['regenerator-runtime/runtime', `${src}/common/render.jsx`,]
+    entry.common = [`${src}/common/render.jsx`,]
 
     const webpackConf = {
         entry,
@@ -77,6 +77,7 @@ module.exports = async() => {
         webpackConf.devtool = 'eval-cheap-module-source-map'
         webpackConf.devServer = {
             port: webpackPort,
+            https: false,
             compress: true,
             historyApiFallback: { disableDotRule: true },
             proxy: { '/': { target: `http://${host}:${port}/`, secure: false } }

@@ -6,7 +6,7 @@ import { Route, Link } from 'react-router-dom'
 
 const Home = () => (
     <div>
-        <h2>dddddd</h2>
+        <h2>dddddddddddddddddddddd</h2>
     </div>
 )
 

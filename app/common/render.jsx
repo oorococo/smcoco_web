@@ -29,6 +29,7 @@ export default (param: Param) => {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//${resourcesPath}/normalize/5.0.0/normalize.min.css" rel="stylesheet" />
     <link href="//${resourcesPath}/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="//${resourcesPath}/highlight.js/9.9.0/styles/default.min.css" rel="stylesheet" />
     ${isDevelopment ? '<!--' : ''}
     <link rel="stylesheet" href="//${publicPath}/static/assets/common/common.css">
     <link rel="stylesheet" href="//${publicPath}/static/assets/${entry}/${entry}.css">
@@ -50,6 +51,10 @@ export default (param: Param) => {
 <script src="//${resourcesPath}/react-redux/5.0.1/react-redux.min.js"></script>
 
 <script src="//${resourcesPath}/seamless-immutable/7.0.1/seamless-immutable.production.min.js"></script>
+
+
+
+<script src="//${resourcesPath}/highlight.js/9.9.0/highlight.min.js"></script>
 
 <script src="//${publicPath}/static/assets/common/common.js"></script>
 <script src="//${publicPath}/static/assets/${entry}/${entry}.js"></script>
